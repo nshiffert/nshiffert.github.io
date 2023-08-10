@@ -13,6 +13,9 @@
         webUrl = responseData.location;
         appUrl = webUrl.replace("https://www.walmart.com/","walmart://");
         console.log(appUrl);
+            setTimeout(function () { 
+            window.location = webUrl;}, 100);
+            window.location = appURL;
       } catch (error) {
         console.error('Error:', error);
         }
@@ -21,9 +24,7 @@
   const urlToFetch = proxyURL;
   fetchAndLogResponse(urlToFetch);
 
-    setTimeout(function () { 
-      window.location = webUrl;}, 100);
-      window.location = appURL;
+
   </script>
     
   </head>
