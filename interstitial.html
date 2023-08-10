@@ -10,7 +10,8 @@
         const response = await fetch(url);
         const responseData = await response.text();
         console.log('Response Data:', responseData);
-        webUrl = responseData.location;
+        data = JSON.parse(responseData);
+        webUrl = data.location;
         appUrl = webUrl.replace("https://www.walmart.com/","walmart://");
         console.log(appUrl);
             setTimeout(function () { 
