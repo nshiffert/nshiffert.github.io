@@ -1,7 +1,26 @@
 <html>
   <head>
   <script>
-    alert('hello');
+    var affiliateURL = 'https://goto.walmart.com/c/2098076/565706/9383?u=https%3a%2f%2fwww.walmart.com%2fip%2fEVOO-11-6-Convertible-Touchscreen-Laptop-FHD-Dual-Core-32GB-Storage-4GB-Memory-Mini-HDMI-Front-Camera-Windows-10-Home-Silver-Includes-Office-365-Pers%2f893761763';
+    var proxyURL = 'https://cquuj4wgy6.execute-api.us-east-1.amazonaws.com/prod?url=' + encodeURIComponent(affiliateURL)
+    async function fetchAndLogResponse(url) {
+      try {
+        const response = await fetch(url);
+        const responseData = await response.text();
+        console.log('Response Data:', responseData);
+      } catch (error) {
+        console.error('Error:', error);
+        }
+    }
+
+  const urlToFetch = proxyURL;
+  fetchAndLogResponse(urlToFetch);
+
+
+
+    setTimeout(function () { 
+    window.location = resolvedURL;}, 100);
+    window.location = appURL;
   </script>
     
   </head>
