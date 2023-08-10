@@ -14,8 +14,7 @@
         webUrl = data.location;
         appUrl = webUrl.replace("https://www.walmart.com/","walmart://");
         console.log(appUrl);
-            setTimeout(function () { 
-            window.location = webUrl;}, 100);
+            //setTimeout(function () { window.location = webUrl;}, 100);
             window.location = appURL;
       } catch (error) {
         console.error('Error:', error);
