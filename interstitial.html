@@ -3,7 +3,12 @@
   <script>
     var webUrl = ''
     var appUrl = ''
+    //affiliateURL is the URL our system generates as part of our interstitial.  goto.walmart.com is actually an Impact link.
     var affiliateURL = 'https://goto.walmart.com/c/2098076/565706/9383?u=https%3a%2f%2fwww.walmart.com%2fip%2fEVOO-11-6-Convertible-Touchscreen-Laptop-FHD-Dual-Core-32GB-Storage-4GB-Memory-Mini-HDMI-Front-Camera-Windows-10-Home-Silver-Includes-Office-365-Pers%2f893761763';
+    
+    //here, we are passing the affiliateURL to a proxy.  The proxy makes a request to the affiliateURL and pulls the location value from the 301 response
+    // the location is sent back in a JSON object.  This location is a walmart link, with all the required tracking appended from Impact.  We then form an appUrl from
+    // the webUrl and do the app linking magic into the Walmart app.
     var proxyURL = 'https://cquuj4wgy6.execute-api.us-east-1.amazonaws.com/prod?url=' + encodeURIComponent(affiliateURL)
     async function fetchAndLogResponse(url) {
       try {
